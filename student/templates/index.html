@@ -1,1 +1,202 @@
 {% extends "base.html" %}
+{% block title %}Find your school and your friends{% endblock %}
+{% block content %}
+<!-- school -->
+<hr class="feature-divider">
+    <ul class="nav nav-tabs" role="tablist" id="feature-tab">
+        <li class="active"><a href="#tab-edu" role="tab" data-toggle="tab">Europore</a></li>
+        <li><a href="#tab-project" role="tab" data-toggle="tab">USA</a></li>
+        <li><a href="#tab-experience" role="tab" data-toggle="tab">Australist</a></li>
+        <li><a href="#tab-technique" role="tab" data-toggle="tab">England</a></li>
+        <li><a href="#tab-hobby" role="tab" data-toggle="tab">Asia</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-edu">
+			<div class="well">
+	        	<div class="panel panel-info">
+	        	{% for school in school_list %}
+	        	<div class="panel-heading">
+				    <h3 class="panel-title">{{ school }}</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<ul class="list-group">
+	        	   {% for key, value in school %}
+				  	<li class="list-group-item">{{ key }}: {{value}}</li>
+				  	{% endfor %}
+				  	</ul>  
+				  </div>
+				  {% endfor %}
+				</div>
+			</div>
+        </div>
+        <div class="tab-pane" id="tab-project">
+            <div class="well">
+	        	<div class="panel panel-info">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">MIT</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<ul class="list-group">
+				  	<li class="list-group-item">Time: </li>
+				  	<li class="list-group-item">Where: </li>
+				  	<li class="list-group-item">Requir: </li>
+				  	<li class="list-group-item">exemple: </li>
+				    <li class="list-group-item">advice: </li>
+					</ul>  
+				  </div>
+				  <div class="panel-heading">
+				    <h3 class="panel-title">哈佛</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<ul class="list-group">
+				  	<li class="list-group-item">Time: </li>
+				  	<li class="list-group-item">Where: </li>
+				  	<li class="list-group-item">Requir: </li>
+				  	<li class="list-group-item">exemple: </li>
+				    <li class="list-group-item">advice: </li>
+					</ul>  
+				  </div>
+				  <div class="panel-heading">
+				    <h3 class="panel-title">伦敦大学</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<ul class="list-group">
+				  	<li class="list-group-item">Time: </li>
+				  	<li class="list-group-item">Where: </li>
+				  	<li class="list-group-item">Requir: </li>
+				  	<li class="list-group-item">exemple: </li>
+				    <li class="list-group-item">advice: </li>
+					</ul>  
+				  </div>
+				</div>
+			</div>
+        </div>
+        <div class="tab-pane" id="tab-experience">
+			<div class="well">
+	        	<div class="panel panel-info">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">墨尔本大学</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<ul class="list-group">
+				  	<li class="list-group-item">Time: </li>
+				  	<li class="list-group-item">Where: </li>
+				  	<li class="list-group-item">Requir: </li>
+				  	<li class="list-group-item">exemple: </li>
+				    <li class="list-group-item">advice: </li>
+					</ul>  
+				  </div>
+				  <div class="panel-heading">
+				    <h3 class="panel-title">悉尼大学</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<ul class="list-group">
+				  	<li class="list-group-item">Time: </li>
+				  	<li class="list-group-item">Where: </li>
+				  	<li class="list-group-item">Requir: </li>
+				  	<li class="list-group-item">exemple: </li>
+				    <li class="list-group-item">advice: </li>
+					</ul>  
+				  </div>
+				  <div class="panel-heading">
+				    <h3 class="panel-title">悉尼二大</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<ul class="list-group">
+				  	<li class="list-group-item">Time: </li>
+				  	<li class="list-group-item">Where: </li>
+				  	<li class="list-group-item">Requir: </li>
+				  	<li class="list-group-item">exemple: </li>
+				    <li class="list-group-item">advice: </li>
+					</ul>  
+				  </div>
+				</div>
+			</div>
+		</div>
+        <div class="tab-pane" id="tab-technique">
+			<div class="well">
+	        	<div class="panel panel-info">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">帝国理工</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<ul class="list-group">
+				  	<li class="list-group-item">Time: </li>
+				  	<li class="list-group-item">Where: </li>
+				  	<li class="list-group-item">Requir: </li>
+				  	<li class="list-group-item">exemple: </li>
+				    <li class="list-group-item">advice: </li>
+					</ul>  
+				  </div>
+				  <div class="panel-heading">
+				    <h3 class="panel-title">剑桥</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<ul class="list-group">
+				  	<li class="list-group-item">Time: </li>
+				  	<li class="list-group-item">Where: </li>
+				  	<li class="list-group-item">Requir: </li>
+				  	<li class="list-group-item">exemple: </li>
+				    <li class="list-group-item">advice: </li>
+					</ul>  
+				  </div>
+				  <div class="panel-heading">
+				    <h3 class="panel-title">曼切斯特大学</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<ul class="list-group">
+				  	<li class="list-group-item">Time: </li>
+				  	<li class="list-group-item">Where: </li>
+				  	<li class="list-group-item">Requir: </li>
+				  	<li class="list-group-item">exemple: </li>
+				    <li class="list-group-item">advice: </li>
+					</ul>  
+				  </div>
+				</div>
+			</div>
+		</div>
+        <div class="tab-pane" id="tab-hobby">
+			<div class="well">
+	        	<div class="panel panel-info">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">东京大学</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<ul class="list-group">
+				  	<li class="list-group-item">Time: </li>
+				  	<li class="list-group-item">Where: </li>
+				  	<li class="list-group-item">Requir: </li>
+				  	<li class="list-group-item">exemple: </li>
+				    <li class="list-group-item">advice: </li>
+					</ul>  
+				  </div>
+				  <div class="panel-heading">
+				    <h3 class="panel-title">南阳理工大学</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<ul class="list-group">
+				  	<li class="list-group-item">Time: </li>
+				  	<li class="list-group-item">Where: </li>
+				  	<li class="list-group-item">Requir: </li>
+				  	<li class="list-group-item">exemple: </li>
+				    <li class="list-group-item">advice: </li>
+					</ul>  
+				  </div>
+				  <div class="panel-heading">
+				    <h3 class="panel-title">首尔大学</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<ul class="list-group">
+				  	<li class="list-group-item">Time: </li>
+				  	<li class="list-group-item">Where: </li>
+				  	<li class="list-group-item">Requir: </li>
+				  	<li class="list-group-item">exemple: </li>
+				    <li class="list-group-item">advice: </li>
+					</ul>  
+				  </div>
+				</div>
+			</div>
+        </div>
+    </div>
+{% endblock %}
