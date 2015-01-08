@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}{{school.name_cn}}{% endblock %}
+{% block nav %}
+<ul class="nav navbar-nav">
+<li><a href="{% url 'school' contient %}">{{ contient }}</a></li>
+</ul>
+{% endblock %}
+{% block content %}
+<div class="jumbotron" id="news">
+<div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ school.name_cn }}</h3>
+    </div>
+    <div class="panel-body">
+      {{ school.detail }}
+    </div>
+    {% if situations %}
+    <div class="panel-heading">
+    	<h3 class="panel-title">校友</h3>
+    </div>
+    <div class="panel-body">
+    <ul>
+      {% for situation in situations %}
+      		<li>{{ situation.student.name_cn }} | {{ situation.specialty.name_cn }} | <a href="#">详细...</a></li>
+      {% endfor %}
+     </ul>
+    </div>
+    {% endif %}
+</div>
+</div>
+{% endblock %}

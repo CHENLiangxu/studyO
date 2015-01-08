@@ -2,7 +2,7 @@
 {% block title %}Find your school and your friends{% endblock %}
 {% block nav %}
 <ul class="nav navbar-nav">
-<li>url_history</li>
+<li><a href="#">find your school</a></li>
 </ul>
 {% endblock %}
 {% block content %}
@@ -12,7 +12,7 @@
         <li ><a href="{% url 'school' 'europe' %}" role="tab" data-toggle="tab">Europe</a></li>
         <li><a href="{% url 'school' 'american' %}" role="tab" data-toggle="tab">USA</a></li>
         <li><a href="{% url 'school' 'australia' %}" role="tab" data-toggle="tab">australia</a></li>
-        <li><a href="{% url 'school' 'United_Kiongdom' %}" role="tab" data-toggle="tab">United Kiongdom</a></li>
+        <li><a href="{% url 'school' 'united_kingdom' %}" role="tab" data-toggle="tab">United kingdom</a></li>
         <li><a href="{% url 'school' 'asia' %}" role="tab" data-toggle="tab">Asia</a></li>
     </ul>
 
@@ -22,17 +22,17 @@
 	        	<div class="panel panel-info">
 	        	{% for country in countrys %}
 		        	<div class="panel-heading">
-					    <h3 class="panel-title">{{ country }}</h3>
+					    <h3 class="panel-title">{{ country.1 }}</h3>
 					</div>
-					<!--content|get_item:country 
-					  <div class="panel-body">
+					{% if schools|get_item:country.0 %}
+					<div class="panel-body">
 					  	<ul class="list-group">
-		        	    for school in content.schools 
-					  	<li class="list-group-item"> school.name_cn</li>
-					  	 endfor
+		        	    {% for school in schools|get_item:country.0 %} 
+					  	<li class="list-group-item"> {{school.name_cn}} | {{ school.name_local }} | <a href="{{ school.site}}">学校网站</a> | <a href="{% url 'school_detail' school.id %}">详细...</a></li>
+					  	 {% endfor %}
 					  	</ul>  
 					  </div>
-					 endif -->
+					 {% endif %}
 				{% endfor %}
 				</div>
 			</div>

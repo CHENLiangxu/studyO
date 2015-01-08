@@ -23,7 +23,7 @@ GENDER = (
 #country:
 COUNTRY_CHOICES = (
     ('FR', 'France'),
-    ('EN', 'United Kiongdom'),
+    ('EN', 'United kingdom'),
     ('AU', 'Australia'),
     ('CA', 'Canada'),
     ('CH', 'Switzerland'),
@@ -38,7 +38,7 @@ COUNTRY_CHOICES = (
 
 COUNTRY_NAME = {
     'FR' : 'France',
-    'EN' : 'United Kiongdom',
+    'EN' : 'United kingdom',
     'AU' : 'Australia',
     'CA' : 'Canada',
     'CH' : 'Switzerland',
@@ -60,6 +60,6 @@ LIST_COUNTRY = {
     'asia' : LIST_COUNTRY_ASIA,
     'american' : LIST_COUNTRY_AMERICAN,
     'australia' : ['AU'],
-    'United_Kiongdom' : ['EN'],
+    'united_kingdom' : ['EN'],
 }
 
