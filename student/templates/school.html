@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Find your school and your friends{% endblock %}
+{% block nav %}
+<ul class="nav navbar-nav">
+<li>url_history</li>
+</ul>
+{% endblock %}
+{% block content %}
+<!-- school -->
+<hr class="feature-divider">
+    <ul class="nav nav-tabs" role="tablist" id="feature-tab">
+        <li ><a href="{% url 'school' 'europe' %}" role="tab" data-toggle="tab">Europe</a></li>
+        <li><a href="{% url 'school' 'american' %}" role="tab" data-toggle="tab">USA</a></li>
+        <li><a href="{% url 'school' 'australia' %}" role="tab" data-toggle="tab">australia</a></li>
+        <li><a href="{% url 'school' 'United_Kiongdom' %}" role="tab" data-toggle="tab">United Kiongdom</a></li>
+        <li><a href="{% url 'school' 'asia' %}" role="tab" data-toggle="tab">Asia</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-edu">
+			<div class="well">
+	        	<div class="panel panel-info">
+	        	{% for country in countrys %}
+		        	<div class="panel-heading">
+					    <h3 class="panel-title">{{ country }}</h3>
+					</div>
+					<!--content|get_item:country 
+					  <div class="panel-body">
+					  	<ul class="list-group">
+		        	    for school in content.schools 
+					  	<li class="list-group-item"> school.name_cn</li>
+					  	 endfor
+					  	</ul>  
+					  </div>
+					 endif -->
+				{% endfor %}
+				</div>
+			</div>
+        </div>
+    </div>
+{% endblock %}

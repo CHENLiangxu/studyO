@@ -1,202 +1,96 @@
 {% extends "base.html" %}
-{% block title %}Find your school and your friends{% endblock %}
-{% block content %}
-<!-- school -->
-<hr class="feature-divider">
-    <ul class="nav nav-tabs" role="tablist" id="feature-tab">
-        <li class="active"><a href="#tab-edu" role="tab" data-toggle="tab">Europore</a></li>
-        <li><a href="#tab-project" role="tab" data-toggle="tab">USA</a></li>
-        <li><a href="#tab-experience" role="tab" data-toggle="tab">Australist</a></li>
-        <li><a href="#tab-technique" role="tab" data-toggle="tab">England</a></li>
-        <li><a href="#tab-hobby" role="tab" data-toggle="tab">Asia</a></li>
+{% block title %}welcom to our company{% endblock %}
+{% block nav %}
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="#news">New</a></li>
+        <li><a href="#school">Find your dream school</a></li>
+        <li><a href="#specialty">Find your specialty</a></li>
+        <li><a href="#others">Others</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#about-modal">About us</a></li>
     </ul>
-
-    <div class="tab-content">
-        <div class="tab-pane active" id="tab-edu">
-			<div class="well">
-	        	<div class="panel panel-info">
-	        	{% for school in school_list %}
-	        	<div class="panel-heading">
-				    <h3 class="panel-title">{{ school }}</h3>
-				  </div>
-				  <div class="panel-body">
-				  	<ul class="list-group">
-	        	   {% for key, value in school %}
-				  	<li class="list-group-item">{{ key }}: {{value}}</li>
-				  	{% endfor %}
-				  	</ul>  
-				  </div>
-				  {% endfor %}
-				</div>
-			</div>
-        </div>
-        <div class="tab-pane" id="tab-project">
-            <div class="well">
-	        	<div class="panel panel-info">
-				  <div class="panel-heading">
-				    <h3 class="panel-title">MIT</h3>
-				  </div>
-				  <div class="panel-body">
-				  	<ul class="list-group">
-				  	<li class="list-group-item">Time: </li>
-				  	<li class="list-group-item">Where: </li>
-				  	<li class="list-group-item">Requir: </li>
-				  	<li class="list-group-item">exemple: </li>
-				    <li class="list-group-item">advice: </li>
-					</ul>  
-				  </div>
-				  <div class="panel-heading">
-				    <h3 class="panel-title">哈佛</h3>
-				  </div>
-				  <div class="panel-body">
-				  	<ul class="list-group">
-				  	<li class="list-group-item">Time: </li>
-				  	<li class="list-group-item">Where: </li>
-				  	<li class="list-group-item">Requir: </li>
-				  	<li class="list-group-item">exemple: </li>
-				    <li class="list-group-item">advice: </li>
-					</ul>  
-				  </div>
-				  <div class="panel-heading">
-				    <h3 class="panel-title">伦敦大学</h3>
-				  </div>
-				  <div class="panel-body">
-				  	<ul class="list-group">
-				  	<li class="list-group-item">Time: </li>
-				  	<li class="list-group-item">Where: </li>
-				  	<li class="list-group-item">Requir: </li>
-				  	<li class="list-group-item">exemple: </li>
-				    <li class="list-group-item">advice: </li>
-					</ul>  
-				  </div>
-				</div>
-			</div>
-        </div>
-        <div class="tab-pane" id="tab-experience">
-			<div class="well">
-	        	<div class="panel panel-info">
-				  <div class="panel-heading">
-				    <h3 class="panel-title">墨尔本大学</h3>
-				  </div>
-				  <div class="panel-body">
-				  	<ul class="list-group">
-				  	<li class="list-group-item">Time: </li>
-				  	<li class="list-group-item">Where: </li>
-				  	<li class="list-group-item">Requir: </li>
-				  	<li class="list-group-item">exemple: </li>
-				    <li class="list-group-item">advice: </li>
-					</ul>  
-				  </div>
-				  <div class="panel-heading">
-				    <h3 class="panel-title">悉尼大学</h3>
-				  </div>
-				  <div class="panel-body">
-				  	<ul class="list-group">
-				  	<li class="list-group-item">Time: </li>
-				  	<li class="list-group-item">Where: </li>
-				  	<li class="list-group-item">Requir: </li>
-				  	<li class="list-group-item">exemple: </li>
-				    <li class="list-group-item">advice: </li>
-					</ul>  
-				  </div>
-				  <div class="panel-heading">
-				    <h3 class="panel-title">悉尼二大</h3>
-				  </div>
-				  <div class="panel-body">
-				  	<ul class="list-group">
-				  	<li class="list-group-item">Time: </li>
-				  	<li class="list-group-item">Where: </li>
-				  	<li class="list-group-item">Requir: </li>
-				  	<li class="list-group-item">exemple: </li>
-				    <li class="list-group-item">advice: </li>
-					</ul>  
-				  </div>
-				</div>
-			</div>
-		</div>
-        <div class="tab-pane" id="tab-technique">
-			<div class="well">
-	        	<div class="panel panel-info">
-				  <div class="panel-heading">
-				    <h3 class="panel-title">帝国理工</h3>
-				  </div>
-				  <div class="panel-body">
-				  	<ul class="list-group">
-				  	<li class="list-group-item">Time: </li>
-				  	<li class="list-group-item">Where: </li>
-				  	<li class="list-group-item">Requir: </li>
-				  	<li class="list-group-item">exemple: </li>
-				    <li class="list-group-item">advice: </li>
-					</ul>  
-				  </div>
-				  <div class="panel-heading">
-				    <h3 class="panel-title">剑桥</h3>
-				  </div>
-				  <div class="panel-body">
-				  	<ul class="list-group">
-				  	<li class="list-group-item">Time: </li>
-				  	<li class="list-group-item">Where: </li>
-				  	<li class="list-group-item">Requir: </li>
-				  	<li class="list-group-item">exemple: </li>
-				    <li class="list-group-item">advice: </li>
-					</ul>  
-				  </div>
-				  <div class="panel-heading">
-				    <h3 class="panel-title">曼切斯特大学</h3>
-				  </div>
-				  <div class="panel-body">
-				  	<ul class="list-group">
-				  	<li class="list-group-item">Time: </li>
-				  	<li class="list-group-item">Where: </li>
-				  	<li class="list-group-item">Requir: </li>
-				  	<li class="list-group-item">exemple: </li>
-				    <li class="list-group-item">advice: </li>
-					</ul>  
-				  </div>
-				</div>
-			</div>
-		</div>
-        <div class="tab-pane" id="tab-hobby">
-			<div class="well">
-	        	<div class="panel panel-info">
-				  <div class="panel-heading">
-				    <h3 class="panel-title">东京大学</h3>
-				  </div>
-				  <div class="panel-body">
-				  	<ul class="list-group">
-				  	<li class="list-group-item">Time: </li>
-				  	<li class="list-group-item">Where: </li>
-				  	<li class="list-group-item">Requir: </li>
-				  	<li class="list-group-item">exemple: </li>
-				    <li class="list-group-item">advice: </li>
-					</ul>  
-				  </div>
-				  <div class="panel-heading">
-				    <h3 class="panel-title">南阳理工大学</h3>
-				  </div>
-				  <div class="panel-body">
-				  	<ul class="list-group">
-				  	<li class="list-group-item">Time: </li>
-				  	<li class="list-group-item">Where: </li>
-				  	<li class="list-group-item">Requir: </li>
-				  	<li class="list-group-item">exemple: </li>
-				    <li class="list-group-item">advice: </li>
-					</ul>  
-				  </div>
-				  <div class="panel-heading">
-				    <h3 class="panel-title">首尔大学</h3>
-				  </div>
-				  <div class="panel-body">
-				  	<ul class="list-group">
-				  	<li class="list-group-item">Time: </li>
-				  	<li class="list-group-item">Where: </li>
-				  	<li class="list-group-item">Requir: </li>
-				  	<li class="list-group-item">exemple: </li>
-				    <li class="list-group-item">advice: </li>
-					</ul>  
-				  </div>
-				</div>
-			</div>
+</div>
+{% endblock %}    
+<
+{% block content %}
+    !-- news -->
+<div class="jumbotron" id="news">
+    <div class="media">
+    <a class="pull-left" >
+        <p>News</p>
+    </a>
+        <div class="media-body">
+            <h2 class="media-heading">USA education is free for everyone<br>
+                <small>more detail
+                </small></h2>
         </div>
     </div>
+</div>
+
+<div class="jumbotron" id="school">
+<ul>
+    <li ><a href="{% url 'school' 'europe' %}">Europore</a></li>
+    <li><a href="{% url 'school' 'american' %}">USA</a></li>
+    <li><a href="{% url 'school' 'australia' %}">Australist</a></li>
+    <li><a href="{% url 'school' 'United_Kiongdom' %}">England</a></li>
+    <li><a href="{% url 'school' 'asia' %}">Asia</a></li>
+</ul>
+</div>
+<div class="jumbotron" id="specialty">
+<ul>
+    <li ><a href="#tab-edu">工科</a></li>
+    <li><a href="#tab-project">理科</a></li>
+    <li><a href="#tab-experience">商科</a></li>
+    <li><a href="#tab-technique">艺术</a></li>
+</ul>
+</div>
+
+<!-- other -->
+<div class="jumbotron" id="others">
+    <div class="media">
+    <a class="pull-left" >
+        <p>Others</p>
+    </a>
+        <div class="media-body">
+            <h2 class="media-heading"> learn to live and study in the Foreign country <br>
+                <small>more detail
+                </small></h2>
+        </div>
+    </div>
+</div>
+
+<!-- About -->
+<div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span
+                        aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="modal-label">About us</h4>
+            </div>
+            <div class="modal-body">
+                <p>Help you to go to your dream school to study</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+    $(function () {
+        $('#menu-nav .navbar-collapse a').click(function (e) {
+            var href = $(this).attr('href');
+            var tabId = $(this).attr('data-tab');
+            e.preventDefault();
+            $(document).scrollTop($(href).offset().top - 70);
+            if (tabId) {
+                $('#feature-tab a[href=#' + tabId + ']').tab('show');
+            }
+        });
+    });
+</script>
 {% endblock %}
