@@ -16,9 +16,8 @@ def find_contient(country):
         return 'amecian'
     if country == 'AU':
         return 'australia'
-    if country == 'EN':
-        return 'United Kingdom'
 
+#register function for get item by the key
 @register.filter
 def get_item(dictionary, key):
     return dictionary.get(key)
@@ -41,12 +40,22 @@ def school_detail(request, school_id):
     content = {}
     school = get_object_or_404(School, pk=school_id)
     content['contient'] = find_contient(school.country)
-    print content['contient']
     if school:
         content['school'] = school
         #find all the student who study in this school
         situations = Situation_school.objects.filter(school=school_id)
         if situations:
-            print situations
             content['situations'] = situations
     return render(request, 'school_detail.html', content)
+
+def student_detail(request, student_id):
+    content = {}
+    student = get_object_or_404(Student, pk=student_id)
+    if student:
+        content['student'] = student
+        situations = Situation_school.objects.filter(student=student_id)
+        #situations have too many information, maybe need to choice something important information
+        if situations:
+            content['situations'] = situations
+        #to do situdations of student, education, project, cv, activity
+    return render(request, 'student_detail.html', content)

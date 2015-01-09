@@ -21,7 +21,7 @@
     <div class="panel-body">
     <ul>
       {% for situation in situations %}
-      		<li>{{ situation.student.name_cn }} | {{ situation.specialty.name_cn }} | <a href="#">详细...</a></li>
+      		<li>{{ situation.student.name_cn }} | {{ situation.specialty.name_cn }} | <a href="{% url 'student_detail' situation.student.id %}">详细...</a></li>
       {% endfor %}
      </ul>
     </div>

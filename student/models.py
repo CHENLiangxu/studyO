@@ -9,7 +9,9 @@ class Student(models.Model):
     name_cn = models.CharField(max_length=30, default='')
     telephone_protable = models.CharField(max_length=16)
     adress = models.CharField(max_length=200, null=True)
-    country = models.CharField(max_length=30, default='China')
+    country = models.CharField(max_length=2,
+                               choices=constant.COUNTRY_CHOICES,
+                               null=True)
     city = models.CharField(max_length=50, null=True)
     code_postal = models.CharField(max_length=10, null=True)
     gender = models. BooleanField(choices=constant.GENDER, default=True)

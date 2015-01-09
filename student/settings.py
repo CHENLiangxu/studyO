@@ -42,6 +42,7 @@ COUNTRY_NAME = {
     'AU' : 'Australia',
     'CA' : 'Canada',
     'CH' : 'Switzerland',
+    'CN' : 'China',
     'DE' : 'Germany',
     'ES' : 'Spain',
     'KR' : 'Korea',
@@ -52,7 +53,7 @@ COUNTRY_NAME = {
 }
 
 
-LIST_COUNTRY_EUROPE = ['FR', 'CH', 'DE','ES', 'IT']
+LIST_COUNTRY_EUROPE = ['EN', 'FR', 'CH', 'DE','ES', 'IT']
 LIST_COUNTRY_ASIA = ['JP', 'KR', 'SG']
 LIST_COUNTRY_AMERICAN = ['US', 'CA']
 LIST_COUNTRY = {
@@ -60,6 +61,5 @@ LIST_COUNTRY = {
     'asia' : LIST_COUNTRY_ASIA,
     'american' : LIST_COUNTRY_AMERICAN,
     'australia' : ['AU'],
-    'united_kingdom' : ['EN'],
 }
 

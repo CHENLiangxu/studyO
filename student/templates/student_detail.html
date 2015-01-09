@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}{{student.name_cn}}{% endblock %}
+{% block nav %}
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="#introduction">{{student.name_cn}}:</a></li>
+        <li><a href="#education">教育</a></li>
+        <li><a href="#experience">项目与工作经验</a></li>
+        <li><a href="#hobby">兴趣爱好</a></li>
+        <li><a href="#activity">活动</a></li>
+    </ul>
+</div>
+{% endblock %}
+{% block content %}
+<div class="jumbotron" id="introduction">
+	<div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{student.name_cn}}</h3>
+    </div>
+		<div class="panel-body">
+		<ul>	
+			<li>国家 : {{student.country}}</li>
+			<li>城市 : {{student.city}}</li>
+			<li>出生 : {{student.date_naissance}}</li>
+			<li>年级 : {{student.year_in_school}}</li>
+			<li>QQ : {{student.qq_link}}</li>
+			<li>个人网站 : {{student.site}}</li>
+			<li>facebook : {{student.facebook_link}}</li>
+		</ul>
+		</div>
+    </div>
+</div>
+{% if situations %}
+<div class="jumbotron" id="education">
+
+	<div class="panel panel-info">
+		{% for situation in situations %}
+      		<div class="panel-heading">
+       			<a href="{% url 'school_detail' situation.school.id %}"><h3 class="panel-title">{{situation.school.name_cn}}</h3></a>
+      		</div>
+			<div class="panel-body">
+				<ul>	
+					<li>{{situation.date_start}} - {{situation.date_end}}</li>
+					<li>城市 : {{situation.school.city}}</li>
+					<li>专业 : {{situation.specialty.name_cn}}</li>
+					{% if situation.is_end %}
+					<li>已毕业</li>
+					{% else %}
+					<li>在读生</li>
+					{% endif %}
+				</ul>
+			</div>
+     	{% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+{% block script %}
+<script>
+    $(function () {
+        $('#menu-nav .navbar-collapse a').click(function (e) {
+            var href = $(this).attr('href');
+            var tabId = $(this).attr('data-tab');
+            e.preventDefault();
+            $(document).scrollTop($(href).offset().top - 70);
+            if (tabId) {
+                $('#feature-tab a[href=#' + tabId + ']').tab('show');
+            }
+        });
+    });
+</script>
+{% endblock %}
