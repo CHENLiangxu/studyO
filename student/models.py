@@ -23,6 +23,8 @@ class Student(models.Model):
     site = models.URLField(null=True)
     facebook_link = models.URLField(null=True)
 
+    def __unicode__(self):
+        return self.name_cn
 
 #situation of education
 #one student has many situations(he has studied in many univercities)
@@ -35,6 +37,18 @@ class Situation_school(models.Model):
     is_end = models.BooleanField(default=True)
     #do you want to publish in the CV
     is_pub = models.BooleanField(default=True)
+
+    def __unicode__(self):
+        return self.student.name_cn + ' in '+ self.school.name_cn
+
+    def student_name(self):
+        return self.student.name_cn
+
+    def school_name(self):
+        return self.school.name_cn
+
+    def specialty_name(self):
+        return self.specialty.name_cn
 
 
 class School(models.Model):
@@ -50,11 +64,16 @@ class School(models.Model):
     is_active = models.BooleanField(default=False)
     detail = models.TextField()
 
+    def __unicode__(self):
+        return self.name_cn
+
 class Specialty(models.Model):
     name_local = models.CharField(max_length=200)
     name_cn = models.CharField(max_length=200)
     detail = models.TextField()
 
+    def __unicode__(self):
+        return self.name_cn
 
 
 
