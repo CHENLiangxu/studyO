@@ -71,6 +71,9 @@ class Specialty(models.Model):
     name_local = models.CharField(max_length=200)
     name_cn = models.CharField(max_length=200)
     detail = models.TextField()
+    specialty_type = models.CharField(max_length=2,
+                               choices=constant.SPECIALTY_TYPE_CHOICES,
+                               null=True)
 
     def __unicode__(self):
         return self.name_cn

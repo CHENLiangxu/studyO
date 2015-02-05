@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, get_object_or_404 
 from student import settings as constant
-from student.models import School, Student, Situation_school
+from student.models import School, Student, Situation_school, Specialty
 from django.template.defaulttags import register
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
@@ -20,6 +20,7 @@ def find_contient(country):
 #register function for get item by the key
 @register.filter
 def get_item(dictionary, key):
+    print dictionary.get(key)
     return dictionary.get(key)
 
 # Create your views here.
@@ -59,3 +60,21 @@ def student_detail(request, student_id):
             content['situations'] = situations
         #to do situdations of student, education, project, cv, activity
     return render(request, 'student_detail.html', content)
+
+def specialty_list(request, para=constant.ENGINEERING):
+    content = {}
+    specialtys = Specialty.objects.filter(specialty_type=para)
+    content['specialtys'] = specialtys
+    if specialtys:
+        content['schools'] = {}
+        for spe in specialtys:
+            school_list = [] 
+            situations = Situation_school.objects.filter(specialty=spe)
+            if situations:
+                school_list = list(set([situation.school for situation in situations]))
+                content['schools'][spe.name_cn] = school_list
+            else:
+                content['schools'][spe.name_cn] = ''
+
+    print content
+    return render(request, 'specialty.html', content)

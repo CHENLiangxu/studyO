@@ -1,3 +1,5 @@
+ #-*- coding: utf-8 -*-
+
 FRESHMAN = 'FR'
 SOPHOMORE = 'SO'
 JUNIOR = 'JR'
@@ -63,3 +65,14 @@ LIST_COUNTRY = {
     'australia' : ['AU'],
 }
 
+ENGINEERING = 'EN'
+SCIENCE = 'SC'
+BUSINESS = 'BU'
+ART = 'AR'
+
+SPECIALTY_TYPE_CHOICES = (
+        (ENGINEERING, u'工科'),
+        (SCIENCE, u'理科'),
+        (BUSINESS, u'商科'),
+        (ART, u'艺术'),
+    )

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}按专业找学校{% endblock %}
+{% block nav %}
+<ul class="nav navbar-nav">
+<li><a href="#">找专业</a></li>
+</ul>
+{% endblock %}
+{% block content %}
+<!-- specialty -->
+<hr class="feature-divider">
+    <ul class="nav nav-tabs" role="tablist" id="feature-tab">
+        <li ><a href="{% url 'specialty' 'EN' %}" >工科</a></li>
+        <li><a href="{% url 'specialty' 'SC' %}" >理科</a></li>
+        <li><a href="{% url 'specialty' 'BU' %}" >商科</a></li>
+        <li><a href="{% url 'specialty' 'AR' %}" >艺术</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-edu">
+			<div class="well">
+	        	<div class="panel panel-info">
+	        	{% for specialty in specialtys %}
+		        	<div class="panel-heading">
+					    <h3 class="panel-title">{{ specialty.name_cn }}</h3>
+					</div>
+					{% if schools|get_item:specialty.name_cn %}
+					<div class="panel-body">
+					  	<ul class="list-group">
+		        	    {% for school in schools|get_item:specialty.name_cn %} 
+					  	<li class="list-group-item"> {{school.name_cn}} | {{ school.name_local }} | <a href="{{ school.site}}">学校网站</a> | <a href="{% url 'school_detail' school.id %}">详细...</a></li>
+					  	 {% endfor %}
+					  	</ul>  
+					  </div>
+					 {% endif %}
+				{% endfor %}
+				</div>
+			</div>
+        </div>
+    </div>
+{% endblock %}
