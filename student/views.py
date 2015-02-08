@@ -20,7 +20,6 @@ def find_contient(country):
 #register function for get item by the key
 @register.filter
 def get_item(dictionary, key):
-    print dictionary.get(key)
     return dictionary.get(key)
 
 # Create your views here.
@@ -76,5 +75,4 @@ def specialty_list(request, para=constant.ENGINEERING):
             else:
                 content['schools'][spe.name_cn] = ''
 
-    print content
     return render(request, 'specialty.html', content)

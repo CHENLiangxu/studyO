@@ -28,20 +28,93 @@
 </div>
 
 <div class="jumbotron" id="school">
-<ul>
-    <li ><a href="{% url 'school' 'europe' %}">Europore</a></li>
-    <li><a href="{% url 'school' 'american' %}">USA</a></li>
-    <li><a href="{% url 'school' 'australia' %}">Australist</a></li>
-    <li><a href="{% url 'school' 'asia' %}">Asia</a></li>
-</ul>
+
+ <div class="row">
+  
+  <div class="col-sm-6 col-md-3" id="item">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>Europore</h3>
+        <p>小语种，性价比高</p>
+        <p><a href="{% url 'school' 'europe' %} " class="btn btn-primary">了解更多..</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-3" id="item">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>USA</h3>
+        <p>世界名学汇聚</p>
+        <p><a href="{% url 'school' 'american' %} " class="btn btn-primary">了解更多..</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-3" id="item">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>Australist</h3>
+        <p>优美环境，移民大国</p>
+        <p><a href="{% url 'school' 'australia' %} " class="btn btn-primary">了解更多..</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-3" id="item">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>Asia</h3>
+        <p>充满活力和机遇</p>
+        <p><a href="{% url 'school' 'asia' %} " class="btn btn-primary">了解更多..</a></p>
+      </div>
+    </div>
+  </div>
+ </div>
 </div>
 <div class="jumbotron" id="specialty">
-<ul>
-    <li ><a href="{% url 'specialty' 'EN' %}">工科</a></li>
-    <li><a href="{% url 'specialty' 'SC' %}">理科</a></li>
-    <li><a href="{% url 'specialty' 'BU' %}">商科</a></li>
-    <li><a href="{% url 'specialty' 'AR' %}">艺术</a></li>
-</ul>
+ <div class="row">
+  
+  <div class="col-sm-6 col-md-3" id="item">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>工科</h3>
+        <p>工程师，程序员</p>
+        <p><a href="{% url 'specialty' 'EN' %} " class="btn btn-primary">了解更多..</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-3" id="item">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>理科</h3>
+        <p>数学家，生物学家</p>
+        <p><a href="{% url 'specialty' 'SC' %} " class="btn btn-primary">了解更多..</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3" id="item">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>商科</h3>
+        <p>企业家，高官，金融大亨</p>
+        <p><a href="{% url 'specialty' 'BU' %} " class="btn btn-primary">了解更多..</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-3" id="item">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>艺术</h3>
+        <p>琴棋书画</p>
+        <p><a href="{% url 'specialty' 'AR' %} " class="btn btn-primary">了解更多..</a></p>
+      </div>
+    </div>
+  </div>
+
+ </div>
 </div>
 
 <!-- other -->
